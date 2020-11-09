@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>SistemaViveros</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet"> 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +11,21 @@
   </head>
 
   <body>
+
+  <header>
+    <nav class="be-green white large-padding">
+      <ul class = "no-list row no-style">
+        <li class="col-md">
+          Incio
+        </li>
+        <li class="col-md">
+          Crear Vivero
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+
     <%= yield %>
   </body>
 </html>
