@@ -1,7 +1,9 @@
-<h2>Iniciar sesión</h2>
+<nav class="margi-ri be-green">
+
+<h2>  Iniciar sesión</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
+  <div class="field ">
     <%= f.label :email, "Correo" %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
@@ -23,4 +25,5 @@
   </div>
 <% end %>
 
+</nav>
 <%= render "devise/shared/links" %>
