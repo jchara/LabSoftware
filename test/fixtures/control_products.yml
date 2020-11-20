@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ica_registration: MyString
+  name: MyString
+  application_frequency: 1
+  price_product: 1
+
+two:
+  ica_registration: MyString
+  name: MyString
+  application_frequency: 1
+  price_product: 1
