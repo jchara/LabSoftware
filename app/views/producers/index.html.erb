@@ -1,0 +1,10 @@
+<% @producers.each do |producer| %>
+    <div>
+    <%= producer.name %> <%= producer.lastname %>
+    -[<%= link_to "Mostrar", producer, method: :get  %>]
+    -[<%= link_to "Eliminar", producer, method: :delete, class:"red"  %>] 
+    </div>
+<%end%>
+<div>
+[<%= link_to "Crear", new_producer_path, :class => 'navbar-link' %>]
+</div>

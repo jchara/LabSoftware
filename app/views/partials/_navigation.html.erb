@@ -1,0 +1,21 @@
+<header>
+    <nav class="be-green white large-padding">
+      <ul class = "no-list row no-style">
+        <li class="col-md">          
+          <%= link_to "Inicio", root_path, :class => 'navbar-link' %>
+        </li>
+        <li class="col-md">
+        <%= link_to "Productores", producers_path, :class => 'navbar-link' %>
+        </li>
+        <li class="col-md">
+            Viveros        
+        </li>
+        <li class="col-md">
+          Labores
+        </li>
+        <li class="col-md">
+        <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+        </li>
+      </ul>
+    </nav>
+ </header> 
