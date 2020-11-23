@@ -1,5 +1,7 @@
 class ProducersController < ApplicationController
+  
   before_action :authenticate_user!
+  
   #GET /producers/
   def index
     @producers = Producer.all
@@ -49,6 +51,7 @@ class ProducersController < ApplicationController
   end
 
   private
+  
   def producer_params
     params.require(:producer).permit(:document_type,:document_number,:name,:lastname)
   end
