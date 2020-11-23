@@ -1,0 +1,21 @@
+<%= form_for @producer do |f| %>
+
+    <div>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+    </div>
+    <div>
+        <%= f.label :lastname%>
+        <%= f.text_field :lastname%>
+    </div>
+    <div>
+        <%= f.label :document_number %>
+        <%= f.text_field :document_number %>
+    </div>
+    <div>
+        <%= f.label:document_type %>
+        <%= f.text_field :document_type %>
+    </div>
+        <%= f.submit %>
+    <% end %>
+    

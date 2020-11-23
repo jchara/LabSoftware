@@ -10,9 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2020_11_16_204315) do
-=======
 ActiveRecord::Schema.define(version: 2020_11_18_041030) do
 
   create_table "control_products", force: :cascade do |t|
@@ -72,7 +69,6 @@ ActiveRecord::Schema.define(version: 2020_11_18_041030) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["department_id"], name: "index_towns_on_department_id"
   end
->>>>>>> 81b6e201c3b262ec5d22e55e86421b3a19870e3f
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

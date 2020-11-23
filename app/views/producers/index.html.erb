@@ -22,8 +22,8 @@
   		<div class="collapse navbar-collapse" id="navbarSupportedContent">
   			<ul class="navbar-nav mr-auto">
   				<li class="nav-item"><a class="nav-link" href="./index.html">Home </a></li>
-  				<li class="nav-item"><a class="nav-link" href="#">Nosotros </a></li>
-  				<li class="nav-item"><a class="nav-link active" href="">Crear vivero </a></li>
+  				<li class="nav-item"><a class="nav-link active" href="">Nosotros </a></li>
+  				<li class="nav-item"><a class="nav-link" href="#">Crear vivero </a></li>
   				<li class="nav-item"><a class="nav-link" href="#">Términos y condiciones </a></li>
   				<li class="nav-item"><a class="nav-link" href="#">Contactos </a></li>
   			</ul>
@@ -38,73 +38,31 @@
 					<li class="breadcrumb-item"><a href="./index.html">Home</a></li>
 					<li class="breadcrumb-item active" aria-current="page">Precios</li>
 				</ol>
-			</nav>
+            </nav>
+
 				<div class="table-responsive">
 				<table class="table table-striped">
 					<thead class="thead-dark">
-						<th>Calidad</th>
-						<th>Villa de Leyva</th>
-						<th>Caño Cristales</th>
-						<th>Guatapé</th>
-						<th>Lago Calima</th>
-						<th>Capurganá</th>
+						<th>Nombre</th>
+						<th>Apellido</th>
+                        <th>Tipo de documento</th>
+                        <th>Documento</th>
+						<th>Fecha Cración</th>
 
 					</thead>
-					<tbody>
-						<tr>
-							<td><span  class="oi oi-star"></span></td>
-							<td>1 estrella</td>
-							<td>$100</td>
-							<td>$120</td>
-							<td>$150</td>
-							<td>$180</td>
+                    <tbody>
+                        <% @producers.each do |producer| %>
+						<tr>	
+							<td><%= producer.name%></td>
+                            <td><%= producer.lastname%></td>
+                            <td><%= producer.document_type%></td>
+                            <td><%= producer.document_number%></td>
+							<td><%= producer.created_at%></td>
+							<td><%= link_to "Editar", edit_producer_path(producer)%></td>
+							<td><%= link_to "Eliminar", producer, method: :delete, data: {confirm: "Seguro?"}%></td>
 						</tr>
-						<tr>
-							<td><span  class="oi oi-star"></span>
-								<span  class="oi oi-star"></span>
-							</td>
-							<td>2 estrella</td>
-							<td>$210</td>
-							<td>$220</td>
-							<td>$250</td>
-							<td>$280</td>
-						</tr>
-						<tr>
-							<td><span  class="oi oi-star"></span>
-								<span  class="oi oi-star"></span>
-								<span  class="oi oi-star"></span>
-							</td>
-							<td>3 estrella</td>
-							<td>$300</td>
-							<td>$320</td>
-							<td>$350</td>
-							<td>$380</td>
-						</tr>
-						<tr>
-							<td><span  class="oi oi-star"></span>
-								<span  class="oi oi-star"></span>
-								<span  class="oi oi-star"></span>
-								<span  class="oi oi-star"></span>
-							</td>
-							<td>4 estrella</td>
-							<td>$400</td>
-							<td>$420</td>
-							<td>$450</td>
-							<td>$480</td>
-						</tr>
-						<tr>
-							<td><span  class="oi oi-star"></span>
-								<span  class="oi oi-star"></span>
-								<span  class="oi oi-star"></span>
-								<span  class="oi oi-star"></span>
-								<span  class="oi oi-star"></span>
-							</td>
-							<td>5 estrella</td>
-							<td>$500</td>
-							<td>$520</td>
-							<td>$550</td>
-							<td>$580</td>
-						</tr>
+						
+                        <% end %>
 					</tbody>
 				</table>
 			</div>
