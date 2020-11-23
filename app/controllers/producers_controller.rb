@@ -6,7 +6,7 @@ class ProducersController < ApplicationController
     def create
         @producer = Producer.new(producer_params)
             if @producer.save
-                redirect_to producer_path
+                redirect_to producers_path
             else
                 render :new
             end
@@ -15,15 +15,16 @@ class ProducersController < ApplicationController
     def delete
         @producer = Producer.find(params[:id])
         @producer.destroy
-        redirect_to producer_path
+        redirect_to producers_path
     end
     def edit
         @producer = Producer.find(params[:id])
     end
+    
     def update
         @producer = Producer.find(params[:id])
             if @producer.update(producer_params)
-                redirect_to producer_path
+                redirect_to producers_path
             else
                 render :edit
             end
