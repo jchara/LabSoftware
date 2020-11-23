@@ -2,6 +2,10 @@ html,body{
     margin: 0px;
     font-family: 'Open Sans', sans-serif;
 }
+a,a:visited{
+    color: inherit;
+    text-decoration: none;
+}
 .no-style{
     list-style:none;
 }

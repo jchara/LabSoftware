@@ -12,24 +12,23 @@
 
   <body>
 
-
-
-
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-
   <p class="navbar-text float-right">
     <% if user_signed_in? %>
-    Logged in as <strong><%= current_user.email %></strong>.
-    <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'navbar-link' %> |
-    <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+    
+    Inicio sesion: <strong><%= current_user.email %></strong>.
+    <%= link_to '[Editar perfil]', edit_user_registration_path, :class => 'navbar-link' %>
+    <%= render "partials/navigation" %>
     <% else %>
     <%= link_to "Regístrate", new_user_registration_path, :class => 'navbar-link'  %> |
     <%= link_to "Iniciar sesión", new_user_session_path, :class => 'navbar-link'  %>
     <% end %>
   </p>
 
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
 
     <%= yield %>
+
+  
   </body>
 </html>
