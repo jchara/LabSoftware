@@ -8,6 +8,11 @@
 				</ol>
 			</nav>
 				<%= form_for @producer do |f| %>
+					<% @producer.errors.full_messages.each do |message| %>
+						<div class="be-red top-space">
+							!!! <%= message %>
+						</div>
+					<%end%>
 				<form>
 					<div class="form-row">
 						<div class="form-group col-sm-6">
