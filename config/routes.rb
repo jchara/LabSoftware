@@ -2,22 +2,6 @@ Rails.application.routes.draw do
 
   
   devise_for :users
-<<<<<<< HEAD
-  #get 'producers/producers'
-  #get 'welcome/index'
-  
-  resources :producers
-=begin
-  get "/producers" index
-  post "/producers" create
-  delete "/producers/:id" destroy
-  get "/producers/:id" show
-  get "/producers/new" new 
-  get "/producers/:id/edit" edit
-  path "/producers/:id" update
-  put "/producers/:id" update
-=end
-=======
   
   get 'welcome/index'
   get 'welcome/contacto'
@@ -32,7 +16,16 @@ Rails.application.routes.draw do
   put '/producer/:id', to: 'producers#update'
   delete '/producer/:id', to: 'producers#delete'
   #resource :producers
->>>>>>> 268e7057e0f39626786f6f3aa40ea92286e03cc0
+=begin
+  get "/producers" index
+  post "/producers" create
+  delete "/producers/:id" destroy
+  get "/producers/:id" show
+  get "/producers/new" new 
+  get "/producers/:id/edit" edit
+  path "/producers/:id" update
+  put "/producers/:id" update
+=end
 
   root :to => 'welcome#index'  
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
