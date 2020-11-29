@@ -1,0 +1,51 @@
+<div class="jumbotron">	
+			<h1>Editar productor</h1>
+		</div>	
+		<div class="container">
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="/welcome/index">Home</a></li>
+				</ol>
+			</nav>
+				<%= form_for @producer do |f| %>
+				<form>
+					<div class="form-row">
+						<div class="form-group col-sm-6">
+							<label for="nombre">Nombre</label>
+							<%= f.text_field :name %>
+						</div>
+						<div class="form-group col-sm-6">
+							<label for="apellido">Apellido</label>
+							<%= f.text_field :lastname%>
+						</div>
+						<div class="form-group col-sm-6">
+							<label for="apellido">Documento</label>
+							<%= f.text_field :document_number, :disabled=>true %>
+						</div>
+						<div class="form-group col-sm-6">
+							<label for="apellido">Tipo de documento</label>
+							<%= f.text_field :document_type %>
+						</div>
+
+						<%= f.submit 'Editar'%>
+				</form>
+				<% end %>
+
+		</div>
+	
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/popper.js/dist/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js//bootstrap.min.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+    
