@@ -1,0 +1,10 @@
+<li class="navbar-text">
+  <% if user_signed_in? %>
+  Bienvenido: <strong><%= current_user.email %></strong>.
+  <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'navbar-link' %> |
+  <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+  <% else %>
+  <%= link_to "Regístrate", new_user_registration_path, :class => 'navbar-link'  %> |
+  <%= link_to "Iniciar sesión", new_user_session_path, :class => 'navbar-link'  %>
+  <% end %>
+</li>
