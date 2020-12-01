@@ -14,11 +14,12 @@ class LaborsController < ApplicationController
     
     def delete
         @labor = Labor.find(params[:id])
-        @labor.destroy
+        @labor.delete
         redirect_to labors_path
     end
     def edit
         @labor = Labor.find(params[:id])
+        @control_products = ControlProduct.all
     end
     
     def update
