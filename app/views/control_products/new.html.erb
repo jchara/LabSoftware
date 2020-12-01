@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+	<body>
+		<%= render "/partials/menu" %>
+
+		<div class="jumbotron">	
+			<h1>Crear Producto</h1>
+		</div>	
+		<div class="container">
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="/welcome/index">Inicio</a></li>
+					<li class="breadcrumb-item"><a href="/control_products">Productos de control</a></li>
+					<li class="breadcrumb-item active" aria-current="page">Crear producto</li>
+				</ol>
+			</nav>
+			<%= form_for @control_product do |f| %>
+				<% @control_product.errors.full_messages.each do |message| %>
+					<div class="be-red top-space">
+						!!! <%= message %>
+					</div>
+				<% end %>
+				<form>
+					<div class="form-row">
+						<div class="form-group col-sm-6">
+							<label for="registro">Registro ICA</label>
+							<%= f.text_field :ica_registration, class: "form-control" %>
+						</div>
+						<div class="form-group col-sm-6">
+							<label for="nombre">Nombre</label>
+							<%= f.text_field :name, class: "form-control" %>
+						</div>
+						<div class="form-group col-sm-6">
+							<label for="frecuencia_aplicacion">Frecuencia de Aplicación</label>
+							<%= f.text_field :application_frequency, class: "form-control" %>
+						</div>
+						<div class="form-group col-sm-6">
+							<label for="precio">Precio del Producto</label>
+							<%= f.text_field :price_product, class: "form-control" %>
+						</div>
+
+
+
+						
+
+
+						<%= f.submit "Crear", class: "btn btn-primary" %>
+					</div>
+				</form>
+			<% end %>
+		</div>
+
+
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="node_modules/jquery/dist/jquery.min.js"></script>
+		<script src="node_modules/popper.js/dist/popper.min.js"></script>
+		<script src="node_modules/bootstrap/dist/js//bootstrap.min.js"></script>
+	</body>
+</html>
+
+
+
+
+
+
+
