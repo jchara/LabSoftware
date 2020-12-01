@@ -15,14 +15,7 @@ Rails.application.routes.draw do
   patch '/producer/:id', to: 'producers#update'
   put '/producer/:id', to: 'producers#update'
   delete '/producer/:id', to: 'producers#delete'
-  get '/nurseries', to: 'nurseries#index'
-  get '/nurseries/new', to: 'nurseries#new'
-  post '/nurseries', to: 'nurseries#create'
-  get '/nurserie/:id', to: 'nurseries#show', as: 'nurserie'
-  get '/nurseries/:id/edit', to: 'nurseries#edit', as: 'edit_nurserie'
-  patch '/nurserie/:id', to: 'nurseries#update'
-  put '/nurserie/:id', to: 'nurseries#update'
-  delete '/nurserie/:id', to: 'nurseries#delete'
+
   #resource :producers
 =begin
   get "/producers" index
@@ -53,6 +46,15 @@ Rails.application.routes.draw do
   patch '/control_product/:id', to: 'control_products#update'
   put '/control_product/:id', to: 'control_products#update'
   delete '/control_product/:id', to: 'control_products#delete'
+
+  get '/nurseries', to: 'nurseries#index'
+  get '/nurseries/new', to: 'nurseries#new'
+  post '/nurseries', to: 'nurseries#create'
+  get '/nurserie/:id', to: 'nurseries#show', as: 'nurserie'
+  get '/nurseries/:id/edit', to: 'nurseries#edit', as: 'edit_nurserie'
+  patch '/nurserie/:id', to: 'nurseries#update'
+  put '/nurserie/:id', to: 'nurseries#update'
+  delete '/nurserie/:id', to: 'nurseries#delete'
 
   root :to => 'welcome#index'  
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

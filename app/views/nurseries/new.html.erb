@@ -52,16 +52,7 @@
 							<%= f.select :department_id, departamentos, class: "form-control" %>
 							
 						</div>
-						<div class="form-group col-sm-6">
-
-							<label for="producto control">Labor</label>
-							<% labores = [] %>
-							<% @labor.each do |item| %>
-							<% labores.push([item.labor_type, item.id]) %>
-							<% end %>
-							<%= f.select :labor_type, labores, class: "form-control" %>
-							
-						</div>
+						
 						
 						<div class="form-group col-sm-6">
 
