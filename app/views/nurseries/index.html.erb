@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="node_modules/open-iconic/font/css/open-iconic-bootstrap.min.css">
+
+		<title>Viveros</title>
+	</head>
+	<body>
+  		<%= render "/partials/menu" %>
+
+		<div class="jumbotron">	
+			<h1>Gestor de viveros</h1>
+		</div>	
+		<div class="container">
+
+			<nav aria-label="breadcrumb">
+				<ol class="btn btn-primary">
+					<%= link_to "Agregar vivero", "/nurseries/new" %>
+				</ol>
+            </nav>
+
+			<div class="table-responsive">
+				<table class="table table-striped">
+					<thead class="thead-dark">
+						<th>Nombre</th>
+                        <th>Codigo</th>
+                        <th>Productor</th>
+                        <th>Departamento</th>
+                       
+
+					</thead>
+                    <tbody>
+                        <% @nurseries.each do |nurserie| %>
+						<tr>	
+							<td><%= nurserie.name %></td>
+                            <td><%= nurserie.nursery_code %></td>
+                            <td><%= nurserie.producer_id %></td>
+                            <td><%= nurserie.department_id %></td>
+							<td><%= link_to "Editar", edit_nursery_path(nurserie) %></td>
+							<td><%= link_to "Eliminar", nurserie, method: :delete, data: { confirm: "Seguro?" } %></td>
+						</tr>
+						
+                        <% end %>
+					</tbody>
+				</table>			
+			</div>
+		</div>
+		
+		<footer>
+			<%= render "/partials/footer" %>
+		</footer>
+	
+
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="node_modules/jquery/dist/jquery.min.js"></script>
+		<script src="node_modules/popper.js/dist/popper.min.js"></script>
+		<script src="node_modules/bootstrap/dist/js//bootstrap.min.js"></script>
+	</body>
+</html>

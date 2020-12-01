@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+	<body>
+		<%= render "/partials/menu" %>
+
+		<div class="jumbotron">	
+				<h1>Editar productor</h1>
+		</div>	
+		<div class="container">
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="/welcome/index">Inicio</a></li>
+					<li class="breadcrumb-item"><a href="/nurseries">Producores</a></li>
+					<li class="breadcrumb-item active" aria-current="page">Editar productor</li>
+				</ol>
+			</nav>
+				<%= form_for @nurserie do |f| %> 
+					<form>
+						<div class="form-row">
+							<div class="form-group col-sm-6">
+								<label for="nombre">Nombre</label>
+								<%= f.text_field :name, class: "form-control" %>
+							</div>
+							<div class="form-group col-sm-6">
+								<label for="apellido">Apellido</label>
+								<%= f.text_field :nursery_code, class: "form-control" %>
+							</div>
+
+							<%= f.submit "Editar", class: "btn btn-primary" %>
+						</div>
+					</form>
+				<% end %>
+
+		</div>		
+	
+
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="node_modules/jquery/dist/jquery.min.js"></script>
+		<script src="node_modules/popper.js/dist/popper.min.js"></script>
+		<script src="node_modules/bootstrap/dist/js//bootstrap.min.js"></script>
+	</body>
+</html>

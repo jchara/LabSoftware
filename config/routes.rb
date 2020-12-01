@@ -15,6 +15,14 @@ Rails.application.routes.draw do
   patch '/producer/:id', to: 'producers#update'
   put '/producer/:id', to: 'producers#update'
   delete '/producer/:id', to: 'producers#delete'
+  get '/nurseries', to: 'nurseries#index'
+  get '/nurseries/new', to: 'nurseries#new'
+  post '/nurseries', to: 'nurseries#create'
+  get '/nurserie/:id', to: 'nurseries#show', as: 'nurserie'
+  get '/nurseries/:id/edit', to: 'nurseries#edit', as: 'edit_nurserie'
+  patch '/nurserie/:id', to: 'nurseries#update'
+  put '/nurserie/:id', to: 'nurseries#update'
+  delete '/nurserie/:id', to: 'nurseries#delete'
   #resource :producers
 =begin
   get "/producers" index
