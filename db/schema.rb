@@ -38,18 +38,20 @@ ActiveRecord::Schema.define(version: 2020_11_18_041030) do
   end
 
   create_table "labors_nurseries", id: false, force: :cascade do |t|
-    t.integer "labor_id"
-    t.integer "nursery_id"
+    t.integer "labor_id", null: false
+    t.integer "nursery_id", null: false
     t.index ["labor_id"], name: "index_labors_nurseries_on_labor_id"
     t.index ["nursery_id"], name: "index_labors_nurseries_on_nursery_id"
   end
 
   create_table "nurseries", force: :cascade do |t|
     t.integer "producer_id", null: false
+    t.integer "department_id", null: false
     t.string "nursery_code"
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["department_id"], name: "index_nurseries_on_department_id"
     t.index ["producer_id"], name: "index_nurseries_on_producer_id"
   end
 
@@ -78,12 +80,15 @@ ActiveRecord::Schema.define(version: 2020_11_18_041030) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "username", default: "", null: false
+    t.string "username"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "labors", "Control_products"
+  add_foreign_key "labors_nurseries", "labors"
+  add_foreign_key "labors_nurseries", "nurseries", column: "nursery_id"
+  add_foreign_key "nurseries", "departments"
   add_foreign_key "nurseries", "producers"
   add_foreign_key "towns", "departments"
 end

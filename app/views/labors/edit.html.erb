@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+	<body>
+		<%= render "/partials/menu" %>
+
+		<div class="jumbotron">	
+				<h1>Editar Labor</h1>
+		</div>	
+		<div class="container">
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="/welcome/index">Inicio</a></li>
+					<li class="breadcrumb-item"><a href="/labors">Labores</a></li>
+					<li class="breadcrumb-item active" aria-current="page">Editar productor</li>
+				</ol>
+			</nav>
+				<%= form_for @labor do |f| %> 
+					<form>
+						<div class="form-row">
+							<div class="form-group col-sm-6">
+								<label for="fecha">Fecha en que se realizó</label>
+								<%= f.date_select :date, class: "form-control" %>
+							</div>
+							<div class="form-group col-sm-6">
+							<label for="descripcion">Descripción</label>
+							<%= f.text_field :description, class: "form-control" %>
+							</div>
+							<div class="form-group col-sm-6">
+
+							<label for="tipo labor">Tipo de Labor</label>
+							<% labores = {'Control de hongos' => 'Control de hongos', 'Control de plagas' => 'Control de plagas', 'Control de Fertilizantes' => 'Control de Fertilizantes'} %>
+							<% lista = labores.sort %>
+							<%= f.select :labor_type, lista, class: "form-control" %>
+							</div>
+							<div class="form-group col-sm-6">
+
+								<label for="producto control">Producto de control usado</label>
+								<%= @control_products %>
+							</div>
+
+							<%= f.submit "Editar", class: "btn btn-primary" %>
+						</div>
+					</form>
+				<% end %>
+
+		</div>		
+	
+
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="node_modules/jquery/dist/jquery.min.js"></script>
+		<script src="node_modules/popper.js/dist/popper.min.js"></script>
+		<script src="node_modules/bootstrap/dist/js//bootstrap.min.js"></script>
+	</body>
+</html>
+
+
+
+
+
+
+
+    

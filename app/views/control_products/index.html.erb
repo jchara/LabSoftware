@@ -16,35 +16,35 @@
   		<%= render "/partials/menu" %>
 
 		<div class="jumbotron">	
-			<h1>Gestor de viveros</h1>
+			<h1>Gestor de Productos</h1>
 		</div>	
 		<div class="container">
 
 			<nav aria-label="breadcrumb">
 				<ol class="btn btn-primary">
-					<%= link_to "Agregar vivero", "/nurseries/new" %>
+					<%= link_to "Agregar producto", "/control_products/new" %>
 				</ol>
             </nav>
 
 			<div class="table-responsive">
 				<table class="table table-striped">
 					<thead class="thead-dark">
+						<th>Registro ICA</th>
 						<th>Nombre</th>
-                        <th>Codigo</th>
-                        <th>Productor</th>
-                        <th>Departamento</th>
-                       
+                        <th>Frecuencia de Aplicación</th>
+						<th>Precio</th>
+						<th COLSPAN="2">Actualizar</th>
 
 					</thead>
                     <tbody>
-                        <% @nurseries.each do |nurserie| %>
+                        <% @control_products.each do |control_product| %>
 						<tr>	
-							<td><%= nurserie.name %></td>
-                            <td><%= nurserie.nursery_code %></td>
-                            <td><%= nurserie.producer_id %></td>
-                            <td><%= nurserie.department_id %></td>
-							<td><%= link_to "Editar", edit_nurserie_path(nurserie) %></td>
-							<td><%= link_to "Eliminar", nurserie, method: :delete, data: { confirm: "Seguro?" } %></td>
+							<td><%= control_product.ica_registration %></td>
+                            <td><%= control_product.name %></td>
+                            <td><%= control_product.application_frequency %></td>
+							<td><%= control_product.price_product %></td>
+							<td><%= link_to "Editar", edit_control_product_path(control_product) %></td>
+							<td><%= link_to "Eliminar", control_product, method: :delete, data: { confirm: "Seguro?" } %></td>
 						</tr>
 						
                         <% end %>

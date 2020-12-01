@@ -16,35 +16,37 @@
   		<%= render "/partials/menu" %>
 
 		<div class="jumbotron">	
-			<h1>Gestor de viveros</h1>
+			<h1>Gestor de Labores</h1>
 		</div>	
 		<div class="container">
 
 			<nav aria-label="breadcrumb">
 				<ol class="btn btn-primary">
-					<%= link_to "Agregar vivero", "/nurseries/new" %>
+					<%= link_to "Agregar Labor", "/labors/new" %>
 				</ol>
             </nav>
 
 			<div class="table-responsive">
 				<table class="table table-striped">
 					<thead class="thead-dark">
-						<th>Nombre</th>
-                        <th>Codigo</th>
-                        <th>Productor</th>
-                        <th>Departamento</th>
-                       
+						<th>Fecha</th>
+						<th>Descripción</th>
+						<th>Tipo de labor</th>
+						<th>Producto</th>
+						<th>Fecha Creación</th>
+						<th COLSPAN="2">Actualizar</th>
 
 					</thead>
                     <tbody>
-                        <% @nurseries.each do |nurserie| %>
+                        <% @labors.each do |labor| %>
 						<tr>	
-							<td><%= nurserie.name %></td>
-                            <td><%= nurserie.nursery_code %></td>
-                            <td><%= nurserie.producer_id %></td>
-                            <td><%= nurserie.department_id %></td>
-							<td><%= link_to "Editar", edit_nurserie_path(nurserie) %></td>
-							<td><%= link_to "Eliminar", nurserie, method: :delete, data: { confirm: "Seguro?" } %></td>
+							<td><%= labor.date %></td>
+                            <td><%= labor.description %></td>
+							<td><%= labor.labor_type %></td>
+							<td><%= labor.Control_product_id %></td>
+							<td><%= labor.created_at %></td>
+							<td><%= link_to "Editar", edit_labor_path(labor) %></td>
+							<td><%= link_to "Eliminar", labor, method: :delete, data: { confirm: "Seguro?" } %></td>
 						</tr>
 						
                         <% end %>

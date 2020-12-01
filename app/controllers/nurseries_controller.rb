@@ -32,11 +32,13 @@ class NurseriesController < ApplicationController
     def new
         @nurserie = Nursery.new
         @producer = Producer.all
-        @departmen = Departmet.all
+        @department = Department.all
+        @labor = Labor.all
+        
 
     end    
     private
         def nurserie_params
-            params.require(:nursery).permit(:nursery_code, :name, producer_id,  )
+            params.require(:nursery).permit(:nursery_code, :name, :producer_id, :department_id, :labor_id )
         end
 end

@@ -30,14 +30,43 @@
 							<label for="código">Código</label>
 							<%= f.text_field :nursery_code, class: "form-control" %>
 						</div>
+						
 						<div class="form-group col-sm-6">
-							<label for="código">Productor</label>
-							<%= f.text_field :producer_id, class: "form-control" %>
+
+							<label for="producto control">Productor</label>
+							<% productores = [] %>
+							<% @producer.each do |item| %>
+							<% productores.push([item.name, item.id]) %>
+							<% end %>
+							<%= f.select :producer_id, productores, class: "form-control" %>
+							
+						</div>
+
+						<div class="form-group col-sm-6">
+
+							<label for="producto control">Departamento</label>
+							<% departamentos = [] %>
+							<% @department.each do |item| %>
+							<% departamentos.push([item.name, item.id]) %>
+							<% end %>
+							<%= f.select :department_id, departamentos, class: "form-control" %>
+							
 						</div>
 						<div class="form-group col-sm-6">
-							<label for="código">Departamento</label>
-							<%= f.text_field :department_id, class: "form-control" %>
+
+							<label for="producto control">Labor</label>
+							<% labores = [] %>
+							<% @labor.each do |item| %>
+							<% labores.push([item.labor_type, item.id]) %>
+							<% end %>
+							<%= f.select :labor_type, labores, class: "form-control" %>
+							
 						</div>
+						
+						<div class="form-group col-sm-6">
+
+
+
 						<%= f.submit "Crear", class: "btn btn-primary" %>
 					</div>
 				</form>

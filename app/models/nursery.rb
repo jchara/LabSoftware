@@ -1,5 +1,6 @@
 class Nursery < ApplicationRecord
   belongs_to :producer
-  has_and_belongs_to_many :labors
   belongs_to :department
+  belongs_to :labor
+  validates :nursery_code, presence: true, uniqueness: true, format: {with: /\d/ }
 end
