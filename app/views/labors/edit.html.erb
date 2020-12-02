@@ -33,9 +33,12 @@
 							<%= f.select :labor_type, lista, class: "form-control" %>
 							</div>
 							<div class="form-group col-sm-6">
-
 								<label for="producto control">Producto de control usado</label>
-								<%= @control_products %>
+								<% productos = [] %>
+								<% @control_products.each do |item| %>
+								<% productos.push([item.name, item.id]) %>
+								<% end %>
+								<%= f.select :Control_product_id, productos, class: "form-control" %>
 							</div>
 
 							<%= f.submit "Editar", class: "btn btn-primary" %>
