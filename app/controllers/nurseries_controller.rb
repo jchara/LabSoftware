@@ -1,12 +1,12 @@
 class NurseriesController < ApplicationController
     def index
         @nurseries = Nursery.all
+        @producers = Producer.all
+        @departments = Department.all
 
     end
     #POST /nurseries
     def create
-        @producer = Producer.all
-        @department = Department.all
         @nurserie = Nursery.new(nurserie_params)
             if @nurserie.save
                 redirect_to nurseries_path
@@ -16,17 +16,15 @@ class NurseriesController < ApplicationController
     end
     
     def delete
-        @producer = Producer.all
-        @department = Department.all
         @nurserie = Nursery.find(params[:id])
-        @nurserie.destroy
+        @nurserie.delete
         redirect_to nurseries_path
     end
     def edit
         
         @nurserie = Nursery.find(params[:id])
-        @producer = Producer.all
-        @department = Department.all
+        @producers = Producer.all
+        @departments = Department.all
     end
     
     def update
@@ -39,9 +37,10 @@ class NurseriesController < ApplicationController
             end
     end
     def new
-        @nurserie = Nursery.new
+        
         @producer = Producer.all
         @department = Department.all
+        @nurserie = Nursery.new
         
     end    
     private

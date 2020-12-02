@@ -27,9 +27,9 @@
 						    </div>
 							<div class="form-group col-sm-6">
 
-							<label for="producto control">Productor</label>
+							<label for="productores">Productor</label>
 						    	<% productores = [] %>
-						    	<% @producer.each do |item| %>
+						    	<% @producers.each do |item| %>
 								<% productores.push([item.name, item.id]) %>
 							    <% end %>
 								<%= f.select :producer_id, productores, class: "form-control" %>
@@ -37,9 +37,9 @@
 
 							<div class="form-group col-sm-6">
 
-								<label for="producto control">Departamento</label>
+								<label for="departamento">Departamento</label>
 								<% departamentos = [] %>
-								<% @department.each do |item| %>
+								<% @departments.each do |item| %>
 								<% departamentos.push([item.name, item.id]) %>
 								<% end %>
 								<%= f.select :department_id, departamentos, class: "form-control" %>

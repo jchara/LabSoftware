@@ -14,7 +14,7 @@ class ProducersController < ApplicationController
     
     def delete
         @producer = Producer.find(params[:id])
-        @producer.destroy
+        @producer.delete
         redirect_to producers_path
     end
     def edit
